@@ -1,4 +1,4 @@
-import swaggerJsdoc from "swagger-jsdoc"; 
+import swaggerJsdoc from "swagger-jsdoc";
 
 const options = {
   definition: {
@@ -11,7 +11,12 @@ const options = {
     servers: [
       {
         url: "http://localhost:3000",
+        description: "Ambiente de desenvolvimento"
       },
+      {
+        url: "https://api-node-i11l.onrender.com/",
+        description: "Ambiente de produção"
+      }
     ],
     components: {
       securitySchemes: {
@@ -30,6 +35,6 @@ const options = {
   },
   apis: ["./src/routes/*.js"], // Caminho para os arquivos de rotas
 };
- 
+
 const specs = swaggerJsdoc(options);
 export default specs;
